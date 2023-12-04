@@ -1,0 +1,14 @@
+[Unit]
+Description=RPIWA Service
+After=network-online.target
+ 
+[Service]
+ExecStart=/usr/local/bin/rpiwa-realtime
+WorkingDirectory=/tmp/
+StandardOutput=file:/tmp/rpiwa-stdout.log
+StandardError=file:/tmp/rpiwa-stderr.log
+Restart=always
+User=root
+ 
+[Install]
+WantedBy=multi-user.target
